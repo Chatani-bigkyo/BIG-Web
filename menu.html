@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="load.css">
+  <title>メニューバー</title>
+
+</head>
+<body>
+  <img src="top_data/homepage.png" width=1000 height=200>
+
+      <nav id="menubar">
+          <ul class="inner">
+              <li><a href="top.html"><h2>TOP</h2></a></li>
+              <li><a href="subpage/経歴.html"><h2>ヒデの経歴</h2></a></li>
+              <li><a href="subpage/戦歴と実績.html"><h2>戦歴と実績</h2></a></li>
+              <li><a href="subpage/魅力.html"><h2>ヒデの魅力</h2></a></li>
+              <li><a href="subpage/N筋肉製作所.html"><h2>筋肉製作所</h2></a></li>
+          </ul>
+      </nav>
+
+      <!--ここから掲示板開始!-->
+
+<form action="s.php" method="post"><table><tr>
+
+<th>ネーム</th><td><input type="text" name="name" size="20"></td></tr><tr>
+
+<th>記事</th><td><textarea name="txt" rows="2" cols="20" tabindex="0"></textarea></td></tr>
+
+</table><input type="submit" value="投稿"></form>
+
+<br>
+
+<?php
+
+$log = 5; //表示するログの数初期は、5
+
+$fp = fopen('log.html', 'r');
+
+for($i=0; $i < $log; $i++){
+
+ $fps = fgets($fp);
+
+ print $fps;
+
+}
+
+?>
+
+<!--ここから掲示板終了-->
